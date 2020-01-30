@@ -15,7 +15,7 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring:
-   profiles: dev
+   profiles: dev            #开发环境连的是数据库1
    application:
     name: springcloud-config-dept-client                         # 对外暴露的微服务名字（也是Eureka实例名称->会自动转换大写））
    datasource:
@@ -51,13 +51,13 @@ mybatis:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 spring:
-   profiles: test
+   profiles: test        #测试环境连的是数据库2
    application:
     name: springcloud-config-dept-client                         # 对外暴露的微服务名字（也是Eureka实例名称->会自动转换大写））
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包 对应驱动版本号：8.0.18
-    url: jdbc:mysql://localhost:3307/cloudDB01?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称cloudDB01  docker映射端口3307
+    url: jdbc:mysql://localhost:3307/cloudDB02?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false              # 数据库名称cloudDB02  docker映射端口3307
     username: root
     password: 123456
     dbcp2:
